@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:tns="http://practica.uvm.mx/conversiones">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <tns:CelsiusAFahrenheit>
+      <celsius>25</celsius>
+    </tns:CelsiusAFahrenheit>
+  </soapenv:Body>
+</soapenv:Envelope>

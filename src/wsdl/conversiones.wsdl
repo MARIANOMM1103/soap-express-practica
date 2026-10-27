@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Contrato WSDL 1.1 de ConversionesService (estilo document/literal, SOAP 1.1).
+  Secciones: types -> message -> portType -> binding -> service.
+-->
+<definitions name="ConversionesService"
+             targetNamespace="http://practica.uvm.mx/conversiones"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://practica.uvm.mx/conversiones"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- 1. Tipos: elementos de petición y respuesta de cada operación -->
+  <types>
+    <xsd:schema targetNamespace="http://practica.uvm.mx/conversiones"
+                elementFormDefault="unqualified">
+
+      <xsd:element name="CelsiusAFahrenheit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="celsius" type="xsd:double"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CelsiusAFahrenheitResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="fahrenheit" type="xsd:double"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="KilometrosAMillas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="kilometros" type="xsd:double"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="KilometrosAMillasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="millas" type="xsd:double"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+    </xsd:schema>
+  </types>
+
+  <!-- 2. Mensajes de entrada y salida -->
+  <message name="CelsiusAFahrenheitRequest">
+    <part name="parameters" element="tns:CelsiusAFahrenheit"/>
+  </message>
+  <message name="CelsiusAFahrenheitResponse">
+    <part name="parameters" element="tns:CelsiusAFahrenheitResponse"/>
+  </message>
+  <message name="KilometrosAMillasRequest">
+    <part name="parameters" element="tns:KilometrosAMillas"/>
+  </message>
+  <message name="KilometrosAMillasResponse">
+    <part name="parameters" element="tns:KilometrosAMillasResponse"/>
+  </message>
+
+  <!-- 3. Operaciones abstractas (interfaz del servicio) -->
+  <portType name="ConversionesPortType">
+    <operation name="CelsiusAFahrenheit">
+      <input message="tns:CelsiusAFahrenheitRequest"/>
+      <output message="tns:CelsiusAFahrenheitResponse"/>
+    </operation>
+    <operation name="KilometrosAMillas">
+      <input message="tns:KilometrosAMillasRequest"/>
+      <output message="tns:KilometrosAMillasResponse"/>
+    </operation>
+  </portType>
+
+  <!-- 4. Vinculación con SOAP sobre HTTP -->
+  <binding name="ConversionesBinding" type="tns:ConversionesPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="CelsiusAFahrenheit">
+      <soap:operation soapAction="http://practica.uvm.mx/conversiones/CelsiusAFahrenheit"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+    <operation name="KilometrosAMillas">
+      <soap:operation soapAction="http://practica.uvm.mx/conversiones/KilometrosAMillas"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+  </binding>
+
+  <!-- 5. Servicio y dirección HTTP del endpoint -->
+  <service name="ConversionesService">
+    <documentation>Conversiones de temperatura y distancia.</documentation>
+    <port name="ConversionesPort" binding="tns:ConversionesBinding">
+      <soap:address location="http://localhost:3000/soap/conversiones"/>
+    </port>
+  </service>
+</definitions>

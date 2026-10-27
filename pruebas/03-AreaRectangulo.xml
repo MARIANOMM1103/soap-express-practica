@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:tns="http://practica.uvm.mx/geometria">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <tns:AreaRectangulo>
+      <base>8</base>
+      <altura>5</altura>
+    </tns:AreaRectangulo>
+  </soapenv:Body>
+</soapenv:Envelope>
