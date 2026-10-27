@@ -1,0 +1,12 @@
+==> 01-CelsiusAFahrenheit.xml  ->  http://localhost:3000/soap/conversiones
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:tns="http://practica.uvm.mx/conversiones"><soap:Body><tns:CelsiusAFahrenheitResponse><fahrenheit>77</fahrenheit></tns:CelsiusAFahrenheitResponse></soap:Body></soap:Envelope>
+
+==> 02-KilometrosAMillas.xml  ->  http://localhost:3000/soap/conversiones
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:tns="http://practica.uvm.mx/conversiones"><soap:Body><tns:KilometrosAMillasResponse><millas>6.21371</millas></tns:KilometrosAMillasResponse></soap:Body></soap:Envelope>
+
+==> 03-AreaRectangulo.xml  ->  http://localhost:3000/soap/geometria
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:tns="http://practica.uvm.mx/geometria"><soap:Body><tns:AreaRectanguloResponse><area>40</area></tns:AreaRectanguloResponse></soap:Body></soap:Envelope>
+
+==> 04-PerimetroRectangulo.xml  ->  http://localhost:3000/soap/geometria
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:tns="http://practica.uvm.mx/geometria"><soap:Body><tns:PerimetroRectanguloResponse><perimetro>26</perimetro></tns:PerimetroRectanguloResponse></soap:Body></soap:Envelope>
+

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:tns="http://practica.uvm.mx/conversiones"><soap:Body><tns:KilometrosAMillasResponse><millas>6.21371</millas></tns:KilometrosAMillasResponse></soap:Body></soap:Envelope>

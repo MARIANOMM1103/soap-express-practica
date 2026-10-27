@@ -57,7 +57,6 @@ soap-express-practica/
 │       └── geometria.wsdl            # Contrato de GeometriaService
 ├── pruebas/                          # Peticiones SOAP y script de pruebas
 ├── evidencias/                       # Capturas, respuestas y registro del middleware
-├── CONCLUSIONES.md
 ├── README.md
 └── .gitignore
 ```
